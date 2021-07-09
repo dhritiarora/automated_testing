@@ -14,4 +14,7 @@ def test_gender_M() :
 def test_transaction_amt():
     assert df[df['amt']<0].shape[0]==0
 
+def test_is_fraud():
+    assert df['is_fraud'].unique().tolist()==[0,1]
+
 
