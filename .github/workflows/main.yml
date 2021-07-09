@@ -35,12 +35,10 @@ jobs:
            pip install pytest
            pip install pytest-cov
            pytest test.py --cov=test --cov-report=xml --cov-report=html
-             -name: Generate Report
-             run: |
-               pip install coverage
-               coverage run -m unittest
-    - name: Upload Coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - name: Commit pytest coverage table
+      uses: peter-evans/commit-comment@v1
+      with:
+        body: ${{ steps.pytester-cov.outputs.output-table }}
       
            
      
