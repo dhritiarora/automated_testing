@@ -35,8 +35,11 @@ jobs:
            pip install pytest
            pip install pytest-cov
            pytest test.py --cov=test --cov-report=xml --cov-report=html
-   
-      
+    - name: Build coverage file
+      run: |
+        pytest --cache-clear --cov=test pytest-coverage.txt
+    - name: Comment coverage
+      uses: coroo/pytest-coverage-commentator@v1.0.2
       
            
      
