@@ -34,6 +34,6 @@ jobs:
       run: |
            pip install pytest
            pip install pytest-cov
-           pytest test.py --cov=test --cov-report=xml --cov-report=html
+           pytest unit_test.py --cov=unit_test --cov-report=xml --cov-report=html
    
      
